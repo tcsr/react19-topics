@@ -15,6 +15,7 @@ system-design sheets in `docs/architecture/`.
 | [07-performance.md](./07-performance.md) | `src/topics/performance` |
 | [08-typescript.md](./08-typescript.md) | `src/topics/typescript` |
 | [09-testing.md](./09-testing.md) | `src/topics/testing` |
+| [10-react-query.md](./10-react-query.md) | `src/topics/react-query` |
 
 ## Suggested revision order
 

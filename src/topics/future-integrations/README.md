@@ -2,10 +2,11 @@
 
 Placeholders for the next phases. Each subfolder gets real code when we wire it up.
 
-## `react-query/`
-TanStack React Query — server-state management for the client: caching,
-background refetch, pagination, mutations, optimistic updates. Will wrap the
-React app and talk to the NestJS API.
+## `react-query/` ✅ DONE
+TanStack React Query — implemented in `src/topics/react-query` (basic query,
+dependent query, pagination, infinite, mutation + invalidation, optimistic).
+Currently talks to JSONPlaceholder via `src/lib/api.ts`; swap BASE_URL to the
+NestJS API in the next phase.
 
 ## `nestjs-api/`
 NestJS backend (Node) — modular controllers/services/providers, DI, DTOs +

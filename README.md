@@ -70,6 +70,14 @@ src/topics/
     virtualization/         react-window windowing (10k rows)
   typescript/               Generic components, discriminated unions, utility types
   testing/                  Vitest + RTL + user-event (*.test.tsx co-located)
+  react-query/              TanStack Query: query, dependent, pagination,
+                            infinite, mutation + invalidation, optimistic
+```
+
+Shared: `src/lib/queryClient.ts` (cache config) + `src/lib/api.ts` (typed fetch;
+swap BASE_URL to NestJS later). Provider + Devtools wired in `src/main.tsx`.
+
+```
   future-integrations/      Planned phases (placeholders)
     react-query/  nestjs-api/  postgresql/  redis-cache/  async-eventbridge/
 ```
@@ -82,7 +90,7 @@ provider, transitions/deferred values, and RSC/Server Actions notes.
 
 ## Roadmap (next phases)
 
-1. **React Query** — client server-state (cache, refetch, mutations).
+1. ✅ **React Query** — client server-state (cache, refetch, mutations). *(done)*
 2. **NestJS + PostgreSQL** — backend API + relational DB (TypeORM/Prisma).
 3. **Redis cache** — cache-aside in front of Postgres.
 4. **Async / EventBridge** — event-driven, decoupled background processing.

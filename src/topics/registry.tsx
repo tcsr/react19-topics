@@ -65,6 +65,14 @@ import { VirtualizationDemo } from "./performance/virtualization/Virtualization"
 import { TypeScriptPatternsDemo } from "./typescript/TypeScriptPatterns";
 import { TestingDemo } from "./testing/Testing";
 
+// Data — React Query
+import { BasicQuery } from "./react-query/basic-query/BasicQuery";
+import { DependentQuery } from "./react-query/dependent/DependentQuery";
+import { Pagination } from "./react-query/pagination/Pagination";
+import { InfiniteQuery } from "./react-query/infinite/InfiniteQuery";
+import { Mutation } from "./react-query/mutation/Mutation";
+import { OptimisticMutation } from "./react-query/optimistic/OptimisticMutation";
+
 export interface Topic {
   id: string;
   title: string;
@@ -156,6 +164,17 @@ export const registry: TopicGroup[] = [
     topics: [
       { id: "tsPatterns", title: "TypeScript patterns", Component: TypeScriptPatternsDemo },
       { id: "testing", title: "Testing (Vitest + RTL)", Component: TestingDemo },
+    ],
+  },
+  {
+    group: "Data (React Query)",
+    topics: [
+      { id: "rqBasic", title: "useQuery (basic)", Component: BasicQuery },
+      { id: "rqDependent", title: "Dependent query (enabled)", Component: DependentQuery },
+      { id: "rqPagination", title: "Pagination (keepPreviousData)", Component: Pagination },
+      { id: "rqInfinite", title: "Infinite query", Component: InfiniteQuery },
+      { id: "rqMutation", title: "Mutation + invalidation", Component: Mutation },
+      { id: "rqOptimistic", title: "Optimistic update + rollback", Component: OptimisticMutation },
     ],
   },
 ];
