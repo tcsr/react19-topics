@@ -141,6 +141,7 @@ def md2html(t, expand=True):
     return markdown.markdown(t, extensions=["tables","fenced_code","sane_lists"])
 
 GLOSSARY_MD = open(os.path.join(os.path.dirname(__file__), "glossary.md"), encoding="utf-8").read()
+TALKING_MD = open(os.path.join(BASE, "react19-topics", "docs", "interview-talking-points.md"), encoding="utf-8").read()
 
 CSS = """
 @page { size: A4; margin: 2cm 1.6cm; @frame footer { -pdf-frame-content: footerContent; bottom: 1cm; height: 1cm; } }
@@ -169,7 +170,9 @@ a { color: #145a86; text-decoration: none; }
 def build():
     parts, toc = [], ['<div class="toc"><h1>Contents</h1>']
     toc.append('<div class="doc-line"><a href="#glossary">Glossary & Quick Cheat-Sheet</a></div>')
-    glossary_html = f'<div class="doc" id="glossary">{md2html(GLOSSARY_MD, expand=False)}</div>'
+    toc.append('<div class="doc-line"><a href="#talking">Project Talking-Points</a></div>')
+    glossary_html = (f'<div class="doc" id="glossary">{md2html(GLOSSARY_MD, expand=False)}</div>'
+                     f'<div class="doc" id="talking">{md2html(TALKING_MD)}</div>')
     for pi,(pt,repo,files) in enumerate(PARTS,1):
         toc.append(f'<div class="part-line">{ihtml.escape(pt)}</div>')
         parts.append(f'<div class="part"><h1>{ihtml.escape(pt)}</h1></div>')
